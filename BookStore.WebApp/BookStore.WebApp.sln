@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.WebApp", "BookStore.WebApp\BookStore.WebApp.csproj", "{7E5B1D64-C210-4786-9C27-FE7F01042806}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStore.WebApp", "BookStore.WebApp\BookStore.WebApp.csproj", "{7E5B1D64-C210-4786-9C27-FE7F01042806}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{171D831D-BE13-4B11-B251-0D884AB653F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.DAL", "BookStore.DAL\BookStore.DAL.csproj", "{BEC22F18-6B8E-43BF-B144-6C79F37536FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +19,16 @@ Global
 		{7E5B1D64-C210-4786-9C27-FE7F01042806}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E5B1D64-C210-4786-9C27-FE7F01042806}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E5B1D64-C210-4786-9C27-FE7F01042806}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEC22F18-6B8E-43BF-B144-6C79F37536FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEC22F18-6B8E-43BF-B144-6C79F37536FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEC22F18-6B8E-43BF-B144-6C79F37536FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEC22F18-6B8E-43BF-B144-6C79F37536FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BEC22F18-6B8E-43BF-B144-6C79F37536FD} = {171D831D-BE13-4B11-B251-0D884AB653F4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2E12717D-DC1D-4A46-868F-1E80C2EB8F26}
