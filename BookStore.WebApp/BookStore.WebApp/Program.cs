@@ -1,7 +1,15 @@
+using BookStore.WebApp.Context;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<BookStoreDbContext>(opt =>
+{
+	opt.UseSqlServer(builder.Configuration.GetConnectionString("BookStoreDbBilkent"));
+});
+
 
 var app = builder.Build();
 
