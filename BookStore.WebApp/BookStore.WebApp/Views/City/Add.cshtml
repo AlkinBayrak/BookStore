@@ -4,11 +4,11 @@
         YENİ
     </div>
     <div class="card-body">
-        <form class="row g-3" asp-controller="City" asp-action="Add" onsubmit="return OnSubmit();">
+        <form class="row g-3" asp-controller="City" asp-action="Add">
             <div class="col-md-12">
                 <label asp-for="Name" class="form-label"></label>
                 <input asp-for="Name" class="form-control"  />
-                <span asp-validation-for="Name" class="text-danger" id="validate-Name"></span>
+                <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="col-12">
                 <div class="form-check">
@@ -29,43 +29,46 @@
 
 @section Scripts
 {
-    <script type="text/javascript">
+    <script type="text/javascript" src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 
-        function OnSubmit() 
-        {
-            //JavaScript Validation
+    @* <script type="text/javascript">
 
-            // var name = document.getElementById("Name").value;
-            // var message = document.getElementById("Name").getAttribute("data-val-required");
+        // function OnSubmit() 
+        // {
+        //     //JavaScript Validation
 
-            // if(name == "")
-            // {
-            //     document.getElementById("validate-Name").innerText = message;
+        //     // var name = document.getElementById("Name").value;
+        //     // var message = document.getElementById("Name").getAttribute("data-val-required");
 
-            //     return false;
-            // }
+        //     // if(name == "")
+        //     // {
+        //     //     document.getElementById("validate-Name").innerText = message;
 
-            // return true;
+        //     //     return false;
+        //     // }
 
-            //JQuery
+        //     // return true;
 
-            var name = $("Name").val();
-            var message = $("#Name").data("val-required");
+        //     //JQuery
 
-            if (name == "") {
-                // document.getElementById("validate-Name").innerText = message;
-                $("#validate-Name").text(message);
+        //     var name = $("Name").val();
+        //     var message = $("#Name").data("val-required");
 
-                // document.getElementById("validate-Name").innerHTML = message;
-                // $("#validate-Name").html(message);
+        //     if (name == "") {
+        //         // document.getElementById("validate-Name").innerText = message;
+        //         $("#validate-Name").text(message);
 
-                return false;
-            }
+        //         // document.getElementById("validate-Name").innerHTML = message;
+        //         // $("#validate-Name").html(message);
 
-            return true;
-        }
+        //         return false;
+        //     }
 
-    </script>
+        //     return true;
+        // }
+
+    </script> *@
 }
 
 
