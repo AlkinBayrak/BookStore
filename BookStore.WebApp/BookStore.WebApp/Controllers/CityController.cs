@@ -39,11 +39,10 @@ namespace BookStore.WebApp.Controllers
 			return View(model);
 		}
 
-        public IActionResult New()
+        [HttpGet]
+        public IActionResult Add()
         {
 			CityViewModel model = new CityViewModel();
-
-           
 
             return View(model);
         }
@@ -52,12 +51,9 @@ namespace BookStore.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Add(CityViewModel model)
         {
-			//DbContextOptionsBuilder dbContextOptionBuilder = new DbContextOptionsBuilder<BookStoreDbContext>();
-   //         dbContextOptionBuilder.UseSqlServer("Server=VMI1229542;Database=BookStoreDb;Trusted_Connection=true;Trustservercertificate=true");
-
-   //         DbContextOptions dbContextOptions = dbContextOptionBuilder.Options;
-
-   //         BookStoreDbContext bookStoreDbContext = new BookStoreDbContext(dbContextOptions);
+            if(!ModelState.IsValid)
+                return View(model);
+            
 
             City city = _mapper.Map<City>(model);
 
