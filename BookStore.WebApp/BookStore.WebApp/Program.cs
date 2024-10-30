@@ -1,5 +1,6 @@
 using BookStore.WebApp.Context;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,8 @@ builder.Services.AddDbContext<BookStoreDbContext>(opt =>
 {
 	opt.UseSqlServer(builder.Configuration.GetConnectionString("BookStoreDbBilkent"));
 });
+
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
 
 var app = builder.Build();

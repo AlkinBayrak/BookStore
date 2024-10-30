@@ -1,0 +1,52 @@
+﻿@model PublisherViewModel
+
+<div class="card">
+    <div class="card-header">
+        YENİ
+    </div>
+    <div class="card-body">
+        <form class="row g-3" asp-controller="Publisher" asp-action="Add">
+            <div class="col-md-12">
+                <label asp-for="Name" class="form-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="col-md-12">
+                <label asp-for="Address" class="form-label"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="col-md-12">
+                <label asp-for="CityId" class="form-label"></label>
+                @* <input asp-for="CityId" class="form-control" /> *@
+
+                <select name="CityId" id="CityId" class="form-select">
+                    @foreach (CityViewModel city in (List<CityViewModel>)ViewBag.CityList)
+                    {
+                        <option value="@city.Id">@city.Name</option>
+                    }
+                </select>
+
+                <span asp-validation-for="CityId" class="text-danger"></span>
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input asp-for="Status" class="form-check-input" value="true">
+                    <label class="form-check-label" asp-for="Status"></label>
+                    <span asp-validation-for="Status" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-12">
+                <input type="submit" class="btn btn-success" value="Kaydet" />
+            </div>
+        </form>
+    </div>
+    <div class="card-footer text-body-secondary">
+        <span class="badge text-info">@DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")</span>
+    </div>
+</div>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -9,25 +9,16 @@ namespace BookStore.WebApp.Controllers
 {
 	public class CityController : Controller
 	{
-        //private readonly IConfiguration _configuration;
-        //public CityController(IConfiguration configuration)
-        //{
-        //    _configuration = configuration;
-        //}
+        
 
         private readonly BookStoreDbContext _dbContext;
-        private MapperConfiguration _mapCongif;
+        
 		private IMapper _mapper;
 
-        public CityController(BookStoreDbContext dbContext)
+        public CityController(BookStoreDbContext dbContext,IMapper mapper)
         {
             _dbContext = dbContext;
-
-            _mapCongif = new MapperConfiguration(
-                cfg=>cfg.CreateMap<CityViewModel,City>()
-                .ForMember(dest=>dest.IsActive,opt => opt.MapFrom(src=>src.Status))
-                .ReverseMap());
-            _mapper = new Mapper(_mapCongif);
+            _mapper = mapper;
         }
 
         public IActionResult Index()
